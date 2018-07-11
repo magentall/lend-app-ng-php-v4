@@ -2,18 +2,7 @@
 
 include 'inc/req.php';
 
-/* set the cache limiter to 'private' */
 
-session_cache_limiter('private');
-$cache_limiter = session_cache_limiter();
-
-/* set the cache expire to 5 minutes */
-session_cache_expire(5);
-$cache_expire = session_cache_expire();
-
-/* start the session */
-
-session_start();
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)&&$_POST['password']!=""){
@@ -76,6 +65,18 @@ if (isset($_POST)&& !empty($_POST)&&$_POST['password']!=""){
     if($string1==$pswd){
 //  if($password==$pswd){
     //$_SESSION['user'] = 'admin';
+    /* start the session */
+    session_start();
+
+    /* set the cache limiter to 'private' */
+
+    session_cache_limiter('private');
+    $cache_limiter = session_cache_limiter();
+
+    /* set the cache expire to 5 minutes */
+    session_cache_expire(5);
+    $cache_expire = session_cache_expire();
+        
     $_SESSION['user'] = $username;
 
     ?>
