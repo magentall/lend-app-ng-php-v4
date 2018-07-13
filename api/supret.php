@@ -6,7 +6,7 @@ include 'inc/req.php';
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
-  $num_pret=$_POST['num_pret'];
+  $num_pret=intval($_POST['num_pret']);
 
 
   if ($num_pret=='none') {

@@ -5,11 +5,11 @@ include 'inc/req.php';
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
 
-  $numjeu = $_POST['jeu'];
-  $numadh = $_POST['adh'];
-  $date_pret = $_POST['date_pret'];
-  $date_retour = $_POST['date_retour'];
-  $prix = $_POST['prix'];
+  $numjeu = intval($_POST['jeu']);
+  $numadh = intval($_POST['adh']);
+  $date_pret = sprinf($_POST['date_pret']);
+  $date_retour = sprinf($_POST['date_retour']);
+  $prix = intval($_POST['prix']);
 
   $today=date("Y-m-d");
   //$timepret=date('Y-m-d', strtotime($today. ' + 21 days'));

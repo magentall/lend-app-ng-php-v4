@@ -6,8 +6,8 @@ include 'inc/req.php';
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
-  $num_jeu=$_POST['num_jeu'];
-  $code=$_POST['code'];
+  $num_jeu=intval($_POST['num_jeu']);
+  $code=intval($_POST['code']);
 
   if ($num_jeu=='none') {
     ?>

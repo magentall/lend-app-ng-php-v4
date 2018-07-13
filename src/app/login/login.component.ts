@@ -16,10 +16,7 @@ export class LoginComponent implements OnInit {
 
   loginUser(event){
 
-
     const coef = '5BY**246f6b36f6b87jH'
-
-
 
     event.preventDefault()
     const target = event.target
@@ -31,11 +28,8 @@ export class LoginComponent implements OnInit {
 
     var charz ="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-
-
     for(var i=0;i<passwordd.length;i++) {
       hexa += passwordd.charCodeAt(i).toString(16)
-      //hexa += 'ab'
     }
 
     hexa += coef
@@ -52,14 +46,7 @@ export class LoginComponent implements OnInit {
 
     const password = psd //hexa
 
-    //console.log(psd)
-
-    //console.log(password,username);
-
-
-
     if (capt==='b'){
-
       this.Auth.getUserDetails(username, password).subscribe(data => {
         if(data.success){
           // redir to /admin
@@ -69,7 +56,8 @@ export class LoginComponent implements OnInit {
           }
           else{
             this.router.navigate(['admin'])
-            this.Auth.setLoggedIn(true)
+            //this.Auth.setLoggedIn(true)
+            this.Auth.setLoggedIn(false)
           }
         } else {
         window.alert(data.message)
@@ -79,8 +67,5 @@ export class LoginComponent implements OnInit {
     else{
       window.alert('la réponse est b')
     }
-
-    //console.log(username, password)
   }
-
 }

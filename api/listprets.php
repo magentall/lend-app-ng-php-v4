@@ -11,8 +11,8 @@ $datend = date("Y-m-d", strtotime("+1 month", $today));
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
   if (($_POST['date_start']!=NULL) && ($_POST['date_end']!=NULL)) {
-    $datstart = $_POST['date_start'];
-    $datend =  $_POST['date_end'];
+    $datstart = sprinf($_POST['date_start']);
+    $datend =  sprinf($_POST['date_end']);
   }
 
 }

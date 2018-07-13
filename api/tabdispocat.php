@@ -8,7 +8,7 @@ $today=date("Y-m-d");
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
 
-  $categorie = $_POST['categorie'];
+  $categorie = sprintf($_POST['categorie']);
   if ($categorie!="Choix...") {
     //$result = req("SELECT jeux.num_jeu FROM jeux LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL;");
     //INNER JOIN categorie ON jeux.nom_categorie=categorie.nom_categorie

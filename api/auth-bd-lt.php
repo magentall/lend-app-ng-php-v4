@@ -76,7 +76,7 @@ if (isset($_POST)&& !empty($_POST)&&$_POST['password']!=""){
     /* set the cache expire to 5 minutes */
     session_cache_expire(5);
     $cache_expire = session_cache_expire();
-        
+
     $_SESSION['user'] = $username;
 
     ?>

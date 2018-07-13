@@ -8,19 +8,19 @@ include 'inc/req.php';
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
-  $id_adh = $_POST['id_adh'];
-  $noms_adherent = $_POST['noms_adherent'];
-  $prenoms_responsables = $_POST['prenoms_responsables'];
-  $prenoms_enfants = $_POST['prenoms_enfants'];
-  $alias = $_POST['alias'];
-  $key = $_POST['pswd'];
-  $date_adh = $_POST['date_adh'];
-  $type_adh = $_POST['type_adh'];
-  $code_postal = $_POST['code_postal'];
-  $ville = $_POST['ville'];
-  $num_tel = $_POST['num_tel'];
-  $num_portable = $_POST['num_portable'];
-  $adresse = $_POST['adresse'];
+  $id_adh = intval($_POST['id_adh'])  ;
+  $noms_adherent = sprinf($_POST['noms_adherent']);
+  $prenoms_responsables = sprinf($_POST['prenoms_responsables']);
+  $prenoms_enfants = sprinf($_POST['prenoms_enfants']);
+  $alias = sprinf($_POST['alias']);
+  $key = sprinf($_POST['pswd']);
+  $date_adh = sprinf($_POST['date_adh']);
+  $type_adh = sprinf($_POST['type_adh']);
+  $code_postal = sprinf($_POST['code_postal']);
+  $ville = sprinf($_POST['ville']);
+  $num_tel = intval($_POST['num_tel']);
+  $num_portable = intval($_POST['num_portable']);
+  $adresse = sprinf($_POST['adresse']);
 
 
 // HAVE TO CHECK IF alias already exists

@@ -48,7 +48,7 @@ export class UserService {
 
 
   isLoggedIn(): Observable<isLoggedIn> {
-    return this.http.get<isLoggedIn>('/api/isloggedin.php')
+    return this.http.get<isLoggedIn>('/api/isloggedin2.php')
   }
 
   logout() {

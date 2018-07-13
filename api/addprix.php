@@ -6,7 +6,7 @@ include 'inc/req.php';
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 if (isset($_POST)&& !empty($_POST)){
-  $prix=$_POST['prix'];
+  $prix=intval($_POST['prix']);
 
 
   $sql = "INSERT INTO prix (prix) VALUES ('$prix');";

@@ -13,7 +13,7 @@ export class AppComponent {
 
     rec = []
 // one constructor only
-    constructor(private jeuxDispo : RecordsService,private titleService: Title) {
+    constructor(private jeuxDispo : RecordsService,private titleService: Title) {}
 
 
   ngOnInit(){
