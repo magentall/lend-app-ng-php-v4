@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service'
 import { Router } from '@angular/router'
+import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private Auth: AuthService, private router: Router) { }
+  constructor(private Auth: AuthService, private router: Router, private user: UserService) { }
 
   ngOnInit() {
   }
@@ -20,9 +21,17 @@ export class LoginComponent implements OnInit {
 
     event.preventDefault()
     const target = event.target
-    const username = target.querySelector('#username').value
-    var passwordd = target.querySelector('#password').value
+    var usrname = target.querySelector('#username').value
+    var psswordd = target.querySelector('#password').value
     const capt = target.querySelector('#capt').value
+
+    const username = this.user.verifIn(usrname)
+    const passwordd = this.user.verifIn(psswordd)
+
+    if((username==0)|(passwordd==0)){
+      window.alert('no')
+      return
+    }
 
     var hexa = '';
 

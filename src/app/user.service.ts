@@ -45,6 +45,19 @@ export class UserService {
     return this.http.get<myData>('/api/database.php')
   }
 //
+  verifIn(value){
+    if(value.search("delete")!=-1){
+      value=0
+    }
+    else{
+      if(value.search("insert")!=-1){
+        value=0
+      }
+      else{
+        return value
+      }
+    }
+  }
 
 
   isLoggedIn(): Observable<isLoggedIn> {
